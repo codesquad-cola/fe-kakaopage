@@ -44,19 +44,23 @@ const onHighLight = (element) => {
   addClass(HIGHLIGHT, element);
 };
 
-const $$category = selectorAll(CATEGORY_ITEM_SELECTOR);
+const setCategoryEvent = () => {
+  const $$category = selectorAll(CATEGORY_ITEM_SELECTOR);
 
-$$category.forEach(($category, clickedIdx, $$category) => {
-  $category.addEventListener('click', (event) => {
-    event.preventDefault();
-    const userIdx = categoryState.getUserIdx();
-    if (userIdx === clickedIdx) return;
-    const $prevCategory = $$category[userIdx];
-    const $curCategory = event.target.closest(CATEGORY_ITEM_SELECTOR);
-    categoryState.setUserIdx(clickedIdx);
+  $$category.forEach(($category, clickedIdx, $$category) => {
+    $category.addEventListener('click', (event) => {
+      event.preventDefault();
+      const userIdx = categoryState.getUserIdx();
+      if (userIdx === clickedIdx) return;
+      const $prevCategory = $$category[userIdx];
+      const $curCategory = event.target.closest(CATEGORY_ITEM_SELECTOR);
+      categoryState.setUserIdx(clickedIdx);
 
-    offHighLight($prevCategory);
-    onHighLight($curCategory);
-    drawDummyPage(categoryState.getUserIdx());
+      offHighLight($prevCategory);
+      onHighLight($curCategory);
+      drawDummyPage(categoryState.getUserIdx());
+    });
   });
-});
+};
+
+export default setCategoryEvent;

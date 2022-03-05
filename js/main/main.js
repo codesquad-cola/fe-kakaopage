@@ -86,7 +86,7 @@ const stopFlag = new StopFlag();
 const onClick = ($category, selectedIdx, $$category) => (event) => {
   if (categoryState.getUserIdx() === selectedIdx) return;
   if (stopFlag.isTrue()) {
-    console.log('아직 누를 수 없음');
+    // console.log('아직 누를 수 없음');
     return;
   }
   stopFlag.setTrue();
@@ -141,4 +141,4 @@ const main = () => {
   $$category[defaultCategoryIdx].click();
 };
 
-main();
+export default main;

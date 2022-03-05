@@ -31,10 +31,7 @@ const setMainContents = ({
       drawDayFilter({ $category, dayWebtoonsMap, categoriesWithDayFilter });
       return;
     })
-    .then(() => {
-      stopFlag.setFalse();
-    })
-    .catch(() => {
+    .finally(() => {
       stopFlag.setFalse();
     });
 };

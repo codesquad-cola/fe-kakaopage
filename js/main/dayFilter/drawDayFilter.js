@@ -4,14 +4,14 @@ import { selector, addClass, createElement } from '../../util/util.js';
 import addClickEvent from './addClickEvent.js';
 const dayFilterTemplete = `
   <ul class="day-filter">
-    <li data-day="1">월</li>
-    <li data-day="2">화</li>
-    <li data-day="3">수</li>
-    <li data-day="4">목</li>
-    <li data-day="5">금</li>
-    <li data-day="6">토</li>
-    <li data-day="0">일</li>
-    <li data-day="-1">전체</li>
+    <li class="day-filter-item" data-day="1">월</li>
+    <li class="day-filter-item" data-day="2">화</li>
+    <li class="day-filter-item" data-day="3">수</li>
+    <li class="day-filter-item" data-day="4">목</li>
+    <li class="day-filter-item" data-day="5">금</li>
+    <li class="day-filter-item" data-day="6">토</li>
+    <li class="day-filter-item" data-day="0">일</li>
+    <li class="day-filter-item" data-day="-1">전체</li>
   </ul>
 `;
 

@@ -14,6 +14,7 @@ const days = {
 /* class name */
 const CATEGORY_HIGHTLIGHT_CLASSNAME = 'circle';
 const DAY_FILTER_CLASSNAME = 'day-filter';
+const DAY_FILTER_ITEM_CLASSNAME = 'day-filter-item';
 
 /* data property */
 const DATA_PROP_DAY = 'day';
@@ -31,7 +32,7 @@ const addClickEvent = ($category, dayWebtoonsMap) => {
   const $dayFilter = selector(`.${DAY_FILTER_CLASSNAME}`);
 
   $dayFilter.addEventListener('click', (event) => {
-    if (event.target.tagName !== 'LI') return;
+    if (!event.target.matches(`.${DAY_FILTER_ITEM_CLASSNAME}`)) return;
     if (
       event.target.dataset[DATA_PROP_DAY] ===
       $category.dataset[DATA_PROP_CURDAY]
